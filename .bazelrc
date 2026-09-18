@@ -4,11 +4,12 @@ common --enable_bzlmod
 # Android SDK path
 build --repo_env=ANDROID_HOME=/Users/alexander.doroshko/Library/Android/sdk
 
-# Java toolchain — use Java 17 for both compilation and running tools
+# Java toolchain — compile sources at Java 17, but run build tools with Java 21
+# (rules_java 9.9.0 ships BazelJavaBuilder compiled at class file version 65.0 = Java 21)
 build --java_language_version=17
 build --tool_java_language_version=17
 build --java_runtime_version=remotejdk_17
-build --tool_java_runtime_version=remotejdk_17
+build --tool_java_runtime_version=remotejdk_21
 
 # Android
 build --android_sdk=@androidsdk//:sdk

@@ -39,5 +39,8 @@ android_binary(
     visibility = ["//visibility:public"],
     deps = [
         ":app_lib",
+        # Required at runtime by profileinstaller (transitive via activity-compose)
+        "@maven//:androidx_concurrent_concurrent_futures",
+        "@maven//:com_google_guava_listenablefuture",
     ],
 )
