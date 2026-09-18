@@ -1,0 +1,15 @@
+# Enable Bzlmod (default in Bazel 9, but explicit for clarity)
+common --enable_bzlmod
+
+# Java toolchain
+build --java_language_version=17
+build --tool_java_language_version=17
+
+# Android
+build --android_sdk=@androidsdk//:sdk
+
+# Enable Jetpack Compose compiler plugin via rules_kotlin
+build --@rules_kotlin//kotlin/settings:compose_enabled=True
+
+# Show test output for failures
+test --test_output=errors

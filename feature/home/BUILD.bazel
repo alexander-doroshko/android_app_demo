@@ -1,0 +1,44 @@
+load("@rules_android//rules:rules.bzl", "android_local_test")
+load("@rules_kotlin//kotlin:android.bzl", "kt_android_library")
+
+kt_android_library(
+    name = "home",
+    srcs = glob(["java/**/*.kt"]),
+    custom_package = "com.example.feature.home",
+    manifest = "AndroidManifest.xml",
+    resource_files = glob(["res/**"]),
+    visibility = ["//visibility:public"],
+    deps = [
+        "//core/base:base_kt",
+        "//core/resources",
+        "//domain/usecase",
+        "//domain/model",
+        "//ui/components",
+        "//ui/theme",
+        "@maven//:androidx_activity_activity_compose",
+        "@maven//:androidx_compose_foundation_foundation",
+        "@maven//:androidx_compose_material3_material3",
+        "@maven//:androidx_compose_runtime_runtime",
+        "@maven//:androidx_compose_ui_ui",
+        "@maven//:androidx_compose_ui_ui_tooling_preview",
+        "@maven//:androidx_lifecycle_lifecycle_viewmodel_ktx",
+        "@maven//:androidx_lifecycle_lifecycle_viewmodel_compose",
+        "@maven//:androidx_compose_runtime_runtime_livedata",
+    ],
+)
+
+android_local_test(
+    name = "HomeViewModelTest",
+    srcs = glob(["test/**/*.kt"]),
+    manifest = "AndroidManifest.xml",
+    test_class = "com.example.feature.home.HomeViewModelTest",
+    deps = [
+        ":home",
+        "//domain/model",
+        "//domain/usecase",
+        "@maven//:junit_junit",
+        "@maven//:org_mockito_kotlin_mockito_kotlin",
+        "@maven//:org_robolectric_robolectric",
+        "@maven//:androidx_test_core",
+    ],
+)

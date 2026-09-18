@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:parentTag="com.example.ui.widgets.RatingBarView">
+
+    <!--
+        This is a custom view using canvas drawing.
+        The merge tag is used because RatingBarView extends View directly
+        and draws its stars via onDraw().
+    -->
+
+</merge>

@@ -1,0 +1,22 @@
+load("@rules_kotlin//kotlin:jvm.bzl", "kt_jvm_test")
+load("@rules_java//java:defs.bzl", "java_test")
+
+kt_jvm_test(
+    name = "DateUtilsTest",
+    srcs = ["java/com/example/core/utils/DateUtilsTest.kt"],
+    test_class = "com.example.core.utils.DateUtilsTest",
+    deps = [
+        "//core/utils",
+        "@maven//:junit_junit",
+    ],
+)
+
+java_test(
+    name = "StringUtilsTest",
+    srcs = ["java/com/example/core/utils/StringUtilsTest.java"],
+    test_class = "com.example.core.utils.StringUtilsTest",
+    deps = [
+        "//core/utils",
+        "@maven//:junit_junit",
+    ],
+)

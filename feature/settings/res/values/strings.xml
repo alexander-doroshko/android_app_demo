@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">Settings</string>
+    <string name="settings_theme_label">Dark theme</string>
+    <string name="settings_username_label">Display name</string>
+    <string name="settings_username_hint">Enter your display name</string>
+    <string name="settings_save">Save</string>
+    <string name="settings_saved_confirmation">Settings saved</string>
+</resources>

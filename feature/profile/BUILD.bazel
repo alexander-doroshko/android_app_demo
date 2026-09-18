@@ -1,0 +1,59 @@
+load("@rules_android//rules:rules.bzl", "android_library", "android_local_test")
+load("@rules_kotlin//kotlin:android.bzl", "kt_android_library")
+
+# Java Activity (XML-based, references resources from this module + core/resources + maven)
+android_library(
+    name = "profile_java",
+    srcs = ["java/com/example/feature/profile/ProfileActivity.java"],
+    custom_package = "com.example.feature.profile",
+    manifest = "AndroidManifest.xml",
+    resource_files = glob(["res/**"]),
+    visibility = ["//visibility:public"],
+    deps = [
+        "//core/base:base_java",
+        "//core/resources",
+        "//domain/model",
+        "//domain/usecase",
+        "//ui/widgets",
+        "@maven//:androidx_appcompat_appcompat",
+        "@maven//:com_google_android_material_material",
+        "@maven//:androidx_constraintlayout_constraintlayout",
+        "@maven//:androidx_cardview_cardview",
+    ],
+)
+
+# Kotlin Compose composables with @Preview
+kt_android_library(
+    name = "profile",
+    srcs = ["java/com/example/feature/profile/ProfileScreen.kt"],
+    custom_package = "com.example.feature.profile",
+    manifest = "AndroidManifest.xml",
+    visibility = ["//visibility:public"],
+    deps = [
+        ":profile_java",
+        "//core/resources",
+        "//domain/model",
+        "//ui/components",
+        "//ui/theme",
+        "//ui/widgets",
+        "@maven//:androidx_compose_foundation_foundation",
+        "@maven//:androidx_compose_material3_material3",
+        "@maven//:androidx_compose_runtime_runtime",
+        "@maven//:androidx_compose_ui_ui",
+        "@maven//:androidx_compose_ui_ui_tooling_preview",
+    ],
+)
+
+android_local_test(
+    name = "ProfileActivityTest",
+    srcs = ["test/java/com/example/feature/profile/ProfileActivityTest.kt"],
+    manifest = "AndroidManifest.xml",
+    test_class = "com.example.feature.profile.ProfileActivityTest",
+    deps = [
+        ":profile_java",
+        "@maven//:junit_junit",
+        "@maven//:org_robolectric_robolectric",
+        "@maven//:androidx_test_core",
+        "@maven//:androidx_test_ext_junit",
+    ],
+)

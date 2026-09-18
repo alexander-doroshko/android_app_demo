@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Root layout for MainActivity. The entire content is rendered via Jetpack Compose
+    using a ComposeView. An alternative pattern would be to call setContent {} directly,
+    but this XML layout demonstrates XML Layout Preview in Android Studio.
+-->
+<androidx.compose.ui.platform.ComposeView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/compose_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" />

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="base_loading">Loading…</string>
+    <string name="base_error_generic">Something went wrong. Please try again.</string>
+    <string name="base_retry">Retry</string>
+    <string name="base_ok">OK</string>
+    <string name="base_cancel">Cancel</string>
+</resources>

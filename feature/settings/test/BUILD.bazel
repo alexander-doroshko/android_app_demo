@@ -1,0 +1,27 @@
+load("@rules_android//rules:rules.bzl", "android_local_test")
+
+android_local_test(
+    name = "SettingsActivityTest",
+    srcs = ["java/com/example/feature/settings/SettingsActivityTest.java"],
+    manifest = "AndroidManifest.xml",
+    test_class = "com.example.feature.settings.SettingsActivityTest",
+    deps = [
+        "//feature/settings",
+        "@maven//:junit_junit",
+        "@maven//:org_robolectric_robolectric",
+        "@maven//:androidx_test_core",
+        "@maven//:androidx_test_ext_junit",
+    ],
+)
+
+android_local_test(
+    name = "SettingsHelperTest",
+    srcs = ["java/com/example/feature/settings/SettingsHelperTest.java"],
+    manifest = "AndroidManifest.xml",
+    test_class = "com.example.feature.settings.SettingsHelperTest",
+    deps = [
+        "//feature/settings",
+        "@maven//:junit_junit",
+        "@maven//:org_robolectric_robolectric",
+    ],
+)

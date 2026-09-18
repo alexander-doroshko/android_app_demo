@@ -1,0 +1,16 @@
+load("@rules_kotlin//kotlin:android.bzl", "kt_android_library")
+
+kt_android_library(
+    name = "components",
+    srcs = glob(["java/**/*.kt"]),
+    custom_package = "com.example.ui.components",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//ui/theme",
+        "@maven//:androidx_compose_material3_material3",
+        "@maven//:androidx_compose_runtime_runtime",
+        "@maven//:androidx_compose_ui_ui",
+        "@maven//:androidx_compose_ui_ui_tooling_preview",
+        "@maven//:androidx_compose_foundation_foundation",
+    ],
+)

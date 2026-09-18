@@ -1,0 +1,21 @@
+load("@rules_kotlin//kotlin:jvm.bzl", "kt_jvm_library")
+load("@rules_java//java:defs.bzl", "java_library")
+
+kt_jvm_library(
+    name = "network",
+    srcs = glob(["java/**/*.kt"]),
+    visibility = ["//visibility:public"],
+    deps = [
+        ":network_config",
+        "@maven//:com_squareup_okhttp3_okhttp",
+        "@maven//:com_squareup_okhttp3_logging_interceptor",
+        "@maven//:com_squareup_retrofit2_retrofit",
+        "@maven//:com_squareup_retrofit2_converter_gson",
+    ],
+)
+
+java_library(
+    name = "network_config",
+    srcs = ["java/com/example/core/network/NetworkConfig.java"],
+    visibility = ["//visibility:public"],
+)
