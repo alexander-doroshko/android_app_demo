@@ -67,7 +67,7 @@ fun ProfileDetails(
         androidx.compose.ui.viewinterop.AndroidView(
             factory = { context ->
                 com.example.ui.widgets.RatingBarView(context).apply {
-                    rating = 3.5f
+                    rating = 4.0f
                 }
             },
             modifier = Modifier

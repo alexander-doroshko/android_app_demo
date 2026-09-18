@@ -46,7 +46,7 @@ public class ProfileActivity extends BaseActivity {
         tvName.setText(user.getName());
         tvEmail.setText(user.getEmail());
         tvEmailDetail.setText(user.getEmail());
-        ratingBar.setRating(3.5f);
+        ratingBar.setRating(4.0f);
 
         // Show initials in avatar circle (bg_avatar_circle.xml uses @color/brand_primary
         // from //core/resources — a different Bazel module's resources)
