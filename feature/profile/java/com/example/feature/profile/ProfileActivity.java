@@ -59,7 +59,7 @@ public class ProfileActivity extends BaseActivity {
 
     @Override
     public boolean onSupportNavigateUp() {
-        onBackPressedDispatcher.onBackPressed();
+        getOnBackPressedDispatcher().onBackPressed();
         return true;
     }
 }

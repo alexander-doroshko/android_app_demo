@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
-    <background android:drawable="@color/brand_primary" />
-    <foreground android:drawable="@drawable/ic_app_icon" />
-</adaptive-icon>
+<!-- Simple round launcher icon — adaptive-icon requires v26 qualifier; use layer-list for compatibility -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#1976D2" />
+        </shape>
+    </item>
+</layer-list>

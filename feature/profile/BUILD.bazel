@@ -1,5 +1,5 @@
-load("@rules_android//rules:rules.bzl", "android_library", "android_local_test")
-load("@rules_kotlin//kotlin:android.bzl", "kt_android_library")
+load("@rules_android//rules:rules.bzl", "android_library")
+load("@rules_kotlin//kotlin:android.bzl", "kt_android_library", "kt_android_local_test")
 
 # Java Activity (XML-based, references resources from this module + core/resources + maven)
 android_library(
@@ -28,6 +28,7 @@ kt_android_library(
     srcs = ["java/com/example/feature/profile/ProfileScreen.kt"],
     custom_package = "com.example.feature.profile",
     manifest = "AndroidManifest.xml",
+    plugins = ["//tools:compose_compiler_plugin"],
     visibility = ["//visibility:public"],
     deps = [
         ":profile_java",
@@ -44,15 +45,17 @@ kt_android_library(
     ],
 )
 
-android_local_test(
+kt_android_local_test(
     name = "ProfileActivityTest",
     srcs = ["test/java/com/example/feature/profile/ProfileActivityTest.kt"],
     manifest = "AndroidManifest.xml",
     test_class = "com.example.feature.profile.ProfileActivityTest",
+    data = ["@@rules_robolectric+//bazel:android-all"],
     deps = [
         ":profile_java",
         "@maven//:junit_junit",
         "@maven//:org_robolectric_robolectric",
+        "@maven//:org_robolectric_shadows_framework",
         "@maven//:androidx_test_core",
         "@maven//:androidx_test_ext_junit",
     ],

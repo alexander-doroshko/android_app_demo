@@ -4,6 +4,7 @@ kt_android_library(
     name = "theme",
     srcs = glob(["java/**/*.kt"]),
     custom_package = "com.example.ui.theme",
+    plugins = ["//tools:compose_compiler_plugin"],
     visibility = ["//visibility:public"],
     deps = [
         "@maven//:androidx_compose_material3_material3",

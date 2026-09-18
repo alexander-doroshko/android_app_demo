@@ -1,0 +1,19 @@
+load("@rules_kotlin//kotlin:core.bzl", "kt_compiler_plugin")
+load("@rules_kotlin//kotlin:jvm.bzl", "kt_jvm_import")
+
+# Expose the Compose compiler plugin JAR from the Kotlin distribution
+# (bundled in the Kotlin 2.x release, but not exported by rules_kotlin targets)
+kt_jvm_import(
+    name = "compose_compiler_plugin_jar",
+    jars = ["@@rules_kotlin++rules_kotlin_extensions+com_github_jetbrains_kotlin_git//:lib/compose-compiler-plugin_jar"],
+)
+
+# Compose compiler plugin for use with kt_android_library / kt_jvm_library
+kt_compiler_plugin(
+    name = "compose_compiler_plugin",
+    compile_phase = True,
+    stubs_phase = False,
+    id = "androidx.compose.compiler.plugins.kotlin",
+    deps = [":compose_compiler_plugin_jar"],
+    visibility = ["//visibility:public"],
+)

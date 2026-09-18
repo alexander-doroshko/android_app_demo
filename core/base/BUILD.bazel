@@ -25,6 +25,7 @@ kt_android_library(
     deps = [
         "@maven//:androidx_lifecycle_lifecycle_viewmodel_ktx",
         "@maven//:androidx_lifecycle_lifecycle_runtime_ktx",
+        "@maven//:androidx_lifecycle_lifecycle_livedata_ktx",
     ],
 )
 

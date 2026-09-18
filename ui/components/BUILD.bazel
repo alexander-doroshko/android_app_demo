@@ -4,6 +4,7 @@ kt_android_library(
     name = "components",
     srcs = glob(["java/**/*.kt"]),
     custom_package = "com.example.ui.components",
+    plugins = ["//tools:compose_compiler_plugin"],
     visibility = ["//visibility:public"],
     deps = [
         "//ui/theme",

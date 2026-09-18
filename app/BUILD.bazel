@@ -6,6 +6,7 @@ kt_android_library(
     srcs = glob(["java/**/*.kt"]),
     custom_package = "com.example.app",
     manifest = "AndroidManifest.xml",
+    plugins = ["//tools:compose_compiler_plugin"],
     resource_files = glob(["res/**"]),
     visibility = ["//visibility:public"],
     deps = [
@@ -35,7 +36,6 @@ android_binary(
         "versionCode": "1",
         "versionName": "1.0",
     },
-    multidex = "native",
     visibility = ["//visibility:public"],
     deps = [
         ":app_lib",
