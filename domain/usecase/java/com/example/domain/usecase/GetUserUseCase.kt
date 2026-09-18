@@ -8,7 +8,7 @@ class GetUserUseCase {
         // Returning hardcoded data for demo purposes.
         return User(
             id = userId,
-            name = "Alice Wonderland",
+            name = "Alice",
             email = "alice@example.com",
             avatarUrl = "",
         )

@@ -117,7 +117,7 @@ private fun ProfileDetailsPreview() {
             ProfileDetails(
                 user = User(
                     id = "1",
-                    name = "Alice Wonderland",
+                    name = "Alice",
                     email = "alice@example.com",
                 ),
             )
@@ -133,7 +133,7 @@ private fun ProfileDetailsDarkPreview() {
             ProfileDetails(
                 user = User(
                     id = "1",
-                    name = "Alice Wonderland",
+                    name = "Alice",
                     email = "alice@example.com",
                 ),
             )

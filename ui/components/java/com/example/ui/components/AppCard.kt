@@ -61,7 +61,7 @@ private fun AppCardPreview() {
 private fun AppCardWithContentPreview() {
     AppTheme {
         AppCard(
-            title = "Alice Wonderland",
+            title = "Alice",
             subtitle = "alice@example.com",
         ) {
             AppPrimaryButton(text = "View Profile", onClick = {})

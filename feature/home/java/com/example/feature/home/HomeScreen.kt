@@ -112,7 +112,7 @@ internal fun HomeContent(
 private fun HomeScreenPreview() {
     AppTheme {
         HomeContent(
-            user = User(id = "1", name = "Alice Wonderland", email = "alice@example.com"),
+            user = User(id = "1", name = "Alice", email = "alice@example.com"),
             isLoading = false,
             onNavigateToProfile = {},
             onNavigateToSettings = {},
@@ -138,7 +138,7 @@ private fun HomeScreenLoadingPreview() {
 private fun HomeScreenDarkPreview() {
     AppTheme(darkTheme = true) {
         HomeContent(
-            user = User(id = "1", name = "Alice Wonderland", email = "alice@example.com"),
+            user = User(id = "1", name = "Alice", email = "alice@example.com"),
             isLoading = false,
             onNavigateToProfile = {},
             onNavigateToSettings = {},

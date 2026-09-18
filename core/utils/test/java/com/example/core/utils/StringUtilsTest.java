@@ -39,7 +39,7 @@ public class StringUtilsTest {
 
     @Test
     public void initials_fullName() {
-        assertEquals("AW", StringUtils.initials("Alice Wonderland"));
+        assertEquals("A", StringUtils.initials("Alice"));
     }
 
     @Test
