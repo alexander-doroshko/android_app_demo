@@ -43,6 +43,8 @@ kt_android_library(
         "@maven//:androidx_compose_ui_ui",
         "@maven//:androidx_compose_ui_ui_tooling",
         "@maven//:androidx_compose_ui_ui_tooling_preview",
+        # Maven R demo: direct dep so Kotlin can reference com.google.android.material.R
+        "@maven//:com_google_android_material_material",
     ],
 )
 
