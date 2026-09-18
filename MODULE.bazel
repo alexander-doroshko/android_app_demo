@@ -71,12 +71,6 @@ maven.install(
         "androidx.compose.runtime:runtime:1.7.4",
         "androidx.compose.runtime:runtime-livedata:1.7.4",
 
-        # Networking
-        "com.squareup.okhttp3:okhttp:4.12.0",
-        "com.squareup.okhttp3:logging-interceptor:4.12.0",
-        "com.squareup.retrofit2:retrofit:2.11.0",
-        "com.squareup.retrofit2:converter-gson:2.11.0",
-
         # Testing
         "junit:junit:4.13.2",
         "org.robolectric:robolectric:4.14.1",
