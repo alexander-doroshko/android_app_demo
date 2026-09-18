@@ -11,6 +11,7 @@ kt_android_library(
         "@maven//:androidx_compose_material3_material3",
         "@maven//:androidx_compose_runtime_runtime",
         "@maven//:androidx_compose_ui_ui",
+        "@maven//:androidx_compose_ui_ui_tooling",
         "@maven//:androidx_compose_ui_ui_tooling_preview",
         "@maven//:androidx_compose_foundation_foundation",
     ],
