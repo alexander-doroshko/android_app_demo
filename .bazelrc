@@ -14,5 +14,18 @@ build --tool_java_runtime_version=remotejdk_21
 # Android
 build --android_sdk=@androidsdk//:sdk
 
+# Build the app for a real Android ABI rather than for the host platform.
+#
+# Without this, android_binary's split transition over `deps` falls back to the first value of
+# --platforms, i.e. @bazel_tools//tools:host_platform, and `bazel mobile-install` names the
+# native-library split's ABI directory after that platform: the split APK ends up containing
+# lib/host_platform/*.so, which no device matches, and the install fails with
+# INSTALL_FAILED_NO_MATCHING_ABIS. (A plain `bazel build` is unaffected -- it keeps the ABI
+# directory the .so already had inside its AAR -- which is why only mobile-install broke.)
+#
+# Change this to @rules_android//:x86_64 for an x86_64 emulator, or override it per run
+# configuration in the IDE's "Bazel parameters" field.
+build --android_platforms=@rules_android//:arm64-v8a
+
 # Show test output for failures
 test --test_output=errors
