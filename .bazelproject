@@ -1,0 +1,6 @@
+# For more options, see project view file documentation: https://www.jetbrains.com/help/idea/bazel-project-view.html
+
+directories:
+  .
+
+derive_targets_from_directories: true
