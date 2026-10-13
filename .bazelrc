@@ -1,8 +1,9 @@
 # Enable Bzlmod (default in Bazel 9, but explicit for clarity)
 common --enable_bzlmod
 
-# Android SDK path
-build --repo_env=ANDROID_HOME=/Users/alexander.doroshko/Library/Android/sdk
+# If ANDROID_HOME env var is not set globally, set it in the user.bazelrc file:
+# build --repo_env=ANDROID_HOME=/Users/username/Library/Android/sdk
+try-import %workspace%/user.bazelrc
 
 # Java toolchain — compile sources at Java 17, but run build tools with Java 21
 # (rules_java 9.9.0 ships BazelJavaBuilder compiled at class file version 65.0 = Java 21)
